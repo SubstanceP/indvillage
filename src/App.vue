@@ -37,7 +37,7 @@ import moment from "moment";
 export default {
   data() {
     return {
-      postsUrl: "http://indvillage.com/wp-json/wp/v2/posts",
+      postsUrl: "https://indvillage.com/wp-json/wp/v2/posts",
       queryOptions: {
         per_page: 6,
         page: 1,
