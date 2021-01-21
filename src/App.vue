@@ -5,8 +5,11 @@
         <div class="nav-wrapper" style="background-color:none;">
           <ul class="flexnav">
             <li><a href="#post1">Veterans</a></li>
-            <li><a href="badges.html">Wellness</a></li>
-            <li><a href="collapsible.html">Lifestyle</a></li>
+            <li><a href="#post2">Wellness</a></li>
+            <li><a href="#post3">Ameneties</a></li>
+            <li><a href="#post4">Lifestyle</a></li>
+            <li><a href="#post5">Family</a></li>
+            <li><a href="#post0">Community</a></li>
           </ul>
         </div>
       </nav>
@@ -23,7 +26,7 @@
         </div> <!-- end of header-content -->
     </header>
     <div class="row">
-      <div class="container" style="line-height:1.66rem;">
+      <div class="container" style="line-height:1.76rem;">
       <h2>Independence Village</h2>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
@@ -140,5 +143,27 @@ export default {
   justify-content: flex-end;
 }
 
+@media (max-width : 1200px) {
+
+/* Styles */
+
+	#post0, #post1, #post2, #post3, #post4, #post5 {
+
+    flex-basis: 50%;
+
+	}
+}
+
+@media (max-width : 750px) {
+
+/* Styles */
+
+	#post0, #post1, #post2, #post3, #post4, #post5 {
+
+    flex-basis: 100%;
+
+
+	}
+}
 
 </style>
