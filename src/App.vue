@@ -1,15 +1,28 @@
-<template>
-  <div id="app">
-    <nav>
+<template id="app">
+  <div>
+      <header class="header">
+  <nav style="margin-top:-1.5rem">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
       <ul>
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="sass.html">Veterans</a></li>
+        <li><a href="badges.html">Wellness</a></li>
+        <li><a href="collapsible.html">Lifestyle</a></li>
       </ul>
     </div>
-  </nav> 
+  </nav>
+        <div class="header-content">
+            <div id="header">
+                <div class="row">
+                    <div class="col s12" style="height:35em;">
+                            <h3 style="text-align: center; margin-top: 3em; color: beige;">Experience, Knowledge, Commitment, Compassion</h3>
+                            <!--<p class="p-heading p-large">Our family of communities remain entirely Covid free</p>
+                            <a class="btn-solid-lg page-scroll" href="#contact">Contact Us</a>-->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header>
+
     <div class="row">
       <div class="col s4 m4" v-for="(post, index) in posts" :key="index" :id="'post'+index">
         <div class="card" id="test">
@@ -58,11 +71,7 @@ export default {
         .then(response => {
           this.posts = response.data;
           console.log("Posts retreieved!");
-          console.log(this.posts);
-          if (this.posts[5])
-            console.log("great");
-          else
-            console.log("nope");
+      
           })
           
           //document.getElementById("test").id = "testing";
@@ -106,5 +115,16 @@ export default {
 .test {
   font-weight:bold;
 }
+
+.header {
+  background: url('./assets/Indvillage-header.jpg') center;
+  background-size: cover;
+}
+
+#post2 div:nth-child(2), #post3 div:nth-child(2), #post5 div:nth-child(2){
+  padding-bottom: 4rem !important;
+}
+
+
 
 </style>
