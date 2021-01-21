@@ -130,9 +130,9 @@ export default {
   background-size: cover;
 }
 
-#post2 div:nth-child(2), #post3 div:nth-child(2), #post5 div:nth-child(2){
+/**#post2 div:nth-child(2), #post3 div:nth-child(2), #post5 div:nth-child(2){
   padding-bottom: 4rem !important;
-}
+}**/
 
 .container {
   width:88% !important;
