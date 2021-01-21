@@ -11,19 +11,21 @@
     </div>
   </nav> 
     <div class="row">
-      <div class="col12 m4" v-for="(post, index) in posts" :key="index">
-        <div class="card">
+      <div class="col s4 m4" v-for="(post, index) in posts" :key="index" :id="'post'+index">
+        <div class="card" id="test">
           <div class="card-image">
             <img
               v-if="post._embedded['wp:featuredmedia']"
               :src="post._embedded['wp:featuredmedia'][0].source_url"
             />
-            <span class="card-title">{{ post.title.renderered }}</span>
           </div>
-          <div class="card-content" v-html="post.content.rendered"></div>
+          
+
+          <div class="card-content" v-html="post.excerpt.rendered"></div>
           <div class="card-action">
             <a href="#">{{ post.title.rendered }}</a>
           </div>
+
         </div>
       </div>
     </div>
@@ -41,10 +43,11 @@ export default {
       queryOptions: {
         per_page: 6,
         page: 1,
-        _embed: true
+        _embed: true     
       },
       
       posts: []
+      
     };
   },
   methods: {
@@ -56,23 +59,52 @@ export default {
           this.posts = response.data;
           console.log("Posts retreieved!");
           console.log(this.posts);
-        })
+          if (this.posts[5])
+            console.log("great");
+          else
+            console.log("nope");
+          })
+          
+          //document.getElementById("test").id = "testing";
+        
         .catch(error => {
           console.log(error);
         });
     },
     getPostDate(date) {
       return moment(date).format("111");
-    }
+    },
+    
+
   },
   mounted() {
     this.getRecentMessages();
-  }
+  },
+  /*setPostID() {
+    document.getElementById("test").id = "testing";
+    return console.log(document.getElementById("testing"));
+   
+  }*/
 };
+
+
+  
+
+
 </script>
 
 <style>
 #app {
   padding:100px;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.test {
+  font-weight:bold;
+}
+
 </style>
